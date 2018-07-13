@@ -4,7 +4,7 @@ pipeline:
     commands: 
       - export BRANCH_NAME=${DRONE_BRANCH}
       - cat Dockerfile.template |envtpl >Dockerfile
-      - cat Dockefile
+      - cat Dockerfile
   docker_master:
     image: plugins/docker
     secrets: [ docker_username, docker_password ]

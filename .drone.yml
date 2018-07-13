@@ -2,9 +2,7 @@ pipeline:
   prepare:
     image: metwork/envtpl-runimage
     commands: 
-      - export BRANCH_NAME=${DRONE_BRANCH}
-      - cat Dockerfile.template |envtpl >Dockerfile
-      - cat Dockerfile
+      - ./make_dockerfile.sh "${DRONE_BRANCH}"
   docker_master:
     image: plugins/docker
     secrets: [ docker_username, docker_password ]

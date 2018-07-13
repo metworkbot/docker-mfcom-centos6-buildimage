@@ -3,6 +3,7 @@ pipeline:
     image: metwork/envtpl-runimage
     commands: 
       - ./make_dockerfile.sh "${DRONE_BRANCH}"
+      - cat Dockerfile
   docker_master:
     image: plugins/docker
     secrets: [ docker_username, docker_password ]

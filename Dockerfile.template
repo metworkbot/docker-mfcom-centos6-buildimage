@@ -1,4 +1,4 @@
-FROM metwork/mfext-mfext-centos6-buildimage
+FROM metwork/mfext-centos6-buildimage
 
 RUN echo -e "[metwork_{{BRANCH_NAME}}]\n\
 name=Metwork Continuous Integration Branch {{BRANCH_NAME}}\n\

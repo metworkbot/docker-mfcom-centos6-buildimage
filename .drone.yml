@@ -8,7 +8,7 @@ trigger_common: &trigger_common
   fork: true
   secrets: [ downstream_token, downstream_server ]
   params:
-    - FORCED_OS_VERSION=centos7
+    - FORCED_OS_VERSION=centos6
   
 
 pipeline:

@@ -14,14 +14,14 @@ pipeline:
       - /root:/root
     commands:
       - if test "${DRONE_BRANCH}" = "master"; then
-          docker build -t metwork/mfcom-centos7-buildimage:master -t metwork/mfcom-centos7-buildimage:latest --build-arg BRANCH=master .;
+          docker build -t metwork/mfcom-centos6-buildimage:master -t metwork/mfcom-centos6-buildimage:latest --build-arg BRANCH=master .;
         elif test "${DRONE_BRANCH}" = "integration"; then
-          docker build -t metwork/mfcom-centos7-buildimage:integration --build-arg BRANCH=integration .;
+          docker build -t metwork/mfcom-centos6-buildimage:integration --build-arg BRANCH=integration .;
         else
-          docker build -t metwork/mfcom-centos7-buildimage:${DRONE_BRANCH} --build-arg BRANCH=master .;
+          docker build -t metwork/mfcom-centos6-buildimage:${DRONE_BRANCH} --build-arg BRANCH=master .;
         fi
-      - docker push metwork/mfcom-centos7-buildimage:${DRONE_BRANCH}
-      - if test "${DRONE_BRANCH}" = "master"; then docker push metwork/mfcom-centos7-buildimage:latest; fi
+      - docker push metwork/mfcom-centos6-buildimage:${DRONE_BRANCH}
+      - if test "${DRONE_BRANCH}" = "master"; then docker push metwork/mfcom-centos6-buildimage:latest; fi
     when:
        event: push 
   trigger_master:
